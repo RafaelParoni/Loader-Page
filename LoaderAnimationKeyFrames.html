@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loader Page</title>
+</head>
+<body>
+    <style>
+        body {
+            margin: 0;
+        }
+        #body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+        }
+        .loader {
+            width: 200px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            cursor:progress;
+        }
+        .loader div {
+            height: 25px;
+            width: 25px;
+            animation-name: loadderFrames;
+            animation-iteration-count: infinite;
+            animation-duration: 2s;
+            background-color: aqua;
+        }
+        .loader div:nth-child(1){
+            animation-delay: 0s;
+        }
+        .loader div:nth-child(2){
+            animation-delay: 0.5s;
+        }
+        .loader div:nth-child(3){
+            animation-delay: 1s;
+        }
+        .loader div:nth-child(4){
+            animation-delay: 1.5s;
+        }
+
+        @keyframes loadderFrames {
+            0%{
+                margin-top: 0px;
+            }
+            50%{
+                background-color: blue;
+                margin-top: 50px;
+            }
+            100%{
+                margin-top: 0px;
+                background-color: aqua;
+            }
+        }
+        .loader2 {
+            position: absolute;
+            width: 50px;
+            height: 5px;
+            background-color: aqua;
+            top: 0px;
+            left: 0;
+            animation-name: loader2;
+            animation-duration: 15s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes loader2 {
+            0%{
+                left: 0%;
+            }
+            15%{
+                width: 200px;
+            }
+            50%{
+                width: 50px;
+                left: calc(100% - 50px);
+                background-color: blue;
+            }
+            65%{
+                width: 200px;
+            }
+            95%{
+                width: 50px;
+            }
+            100% {
+                background-color: aqua;
+                left: 0%
+            }   
+        }
+        .subTitle{
+            transition: 0.5s;
+            cursor: pointer;
+        }
+        .subTitle:hover{
+            transform: scale(1.5);
+            transform: rotate(180deg);
+        }
+    </style>
+    <div id="body">
+        <h1>Carregando :)</h1>
+        <div class="loader" >
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <h1 class="subTitle">👌</h1>
+        <div class="loader2"></div>
+    </div>
+</body>
+</html>
